@@ -7,6 +7,7 @@ from aiogram.enums import ParseMode
 from handlers import user_router, other_router
 from config.config import Config, load_config
 from filters.filters import UserFilter
+from menu.commands import set_main_menu
 
 
 async def main():
@@ -16,6 +17,7 @@ async def main():
     )
     dp = Dispatcher()
     dp.message.filter(UserFilter(config.bot.user_ids))
+    dp.startup.register(set_main_menu)
     dp.include_routers(user_router, other_router)
 
     await bot.delete_webhook(drop_pending_updates=True)
