@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-LEXICON_RU: dict = {
+LEXICON_RU: dict[str, str] = {
     "/start": (
         "<b>Привет!</b> 👋\n\nДавай с тобой сыграем в игру "
         "'Камень, ножницы, бумага'?\n\nЕсли ты, вдруг, "
@@ -29,4 +29,9 @@ LEXICON_RU: dict = {
     "user_won": "Ты победил! Поздравляю!\n\nДавай сыграем еще?",
     "nobody_won": "Ничья!\n\nПродолжим?",
     "bot_choice": "Мой выбор",
+}
+
+LEXICON_COMMANDS_RU: dict[str, str] = {
+    "/start": "Запуск бота",
+    "/help": "Инструкция по использованию бота",
 }
