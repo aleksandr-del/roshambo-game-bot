@@ -1,76 +1,105 @@
-# Telegram-бот «Камень, ножницы, бумага»
+# Rock-Paper-Scissors Telegram Bot
 
-## О проекте
+## About the Project
 
-Простой и интерактивный Telegram-бот на Python с использованием асинхронного фреймворка aiogram. Позволяет играть в классическую игру «Камень, ножницы, бумага» с ботом через чат в Telegram с помощью удобных кастомных клавиатур и подробных инструкций на русском языке.
+A simple and interactive Telegram bot built with Python using the asynchronous aiogram framework. Allows users to play the classic "Rock, Paper, Scissors" game with the bot through Telegram chat using convenient custom keyboards and detailed instructions in Russian.
 
-## Возможности
+## Features
 
-- Игра «Камень, ножницы, бумага» с ботом
-- Интерфейс на русском языке с понятными сообщениями и подсказками
-- Клавиатуры для быстрого выбора действия и ходов
-- Ограничение доступа по списку user_id
-- Логирование и разделение логов на INFO и ERROR
-- Чёткое разделение кода по модулям: конфигурация, фильтры, обработчики, клавиатуры, сервисы и локализация
+- Rock-Paper-Scissors game against the bot
+- Russian language interface with clear messages and hints
+- Custom keyboards for quick action and move selection
+- Access restriction by user_id list
+- Logging with separation of INFO and ERROR logs
+- Clean code separation into modules: configuration, filters, handlers, keyboards, services, and localization
 
-## Требования
+## Requirements
 
-- Python 3.11 или новее
-- Зависимости из `requirements.txt` (aiogram, environs и др.)
+- Python 3.11 or newer
+- Dependencies from `requirements.txt` (aiogram, environs, etc.)
 
-## Установка и запуск
+## Installation and Setup
 
-1. Зарегистрируйте бота в [@BotFather](https://t.me/botfather) и получите токен.
+1. Register your bot with [@BotFather](https://t.me/botfather) and get the token.
 
-2. Клонируйте репозиторий:
+2. Clone the repository:
 
-```
+```bash
 git clone https://github.com/aleksandr-del/roshambo-game-bot.git
-cd roshambo_game-bot
+cd roshambo-game-bot
 ```
 
-3. Создайте файл `.env` в корне проекта с содержимым:
+3. Create a `.env` file in the project root with the following content:
 
 ```env
-BOT_TOKEN="ваш_токен_бота"
-USER_IDS=123456789,987654321 # Список user_id через запятую, кто может использовать бота
+BOT_TOKEN="your_bot_token"
+USER_IDS=123456789,987654321 # Comma-separated list of user_ids who can use the bot
 ```
 
-4. Установите зависимости:
+4. Install dependencies:
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
+5. Run the bot:
 
-5. Запустите бота:
-
-```
+```bash
 python main.py
 ```
 
-## Как пользоваться
+## How to Use
 
-- Отправьте команду `/start` для начала и просмотра приветственного сообщения.
-- Нажмите на кнопку «✅ Давай!», чтобы начать игру, или «Не хочу!», чтобы отказаться.
-- Выберите один из ходов: Камень 🗿, Ножницы ✂️ или Бумага 📜.
-- Бот покажет свой ход и объявит результат игры (победа, поражение, ничья).
-- Команда `/help` показывает правила игры.
+- Send the `/start` command to begin and view the welcome message.
+- Click the "✅ Давай!" (Let's go!) button to start the game, or "Не хочу!" (Don't want to!) to decline.
+- Choose one of the moves: Rock 🗿, Scissors ✂️, or Paper 📜.
+- The bot will show its move and announce the game result (win, loss, draw).
+- The `/help` command shows the game rules.
 
-## Структура проекта
+## Project Structure
 
 ```
 .
-├── config/ # Конфигурация бота через .env
-├── filters/ # Фильтры для сообщений (например, по user_id)
-├── handlers/ # Обработчики команд и сообщений
-├── keyboards/ # Клавиатуры с кнопками для взаимодействия
-├── lexicon/ # Тексты сообщений и кнопок на русском
-├── logger/ # Настройки и фильтры логирования
-├── main.py # Точка входа, запуск и конфигурация бота
-├── menu/ # Команды главного меню бота
-├── requirements.txt # Зависимости проекта
-├── services/ # Логика игры и вспомогательные функции
-├── .env.example # Пример файла с переменными окружения
-└── .gitignore # Игнорируемые при коммите файлы и папки
+├── config/          # Bot configuration via .env
+├── filters/         # Message filters (e.g., by user_id)
+├── handlers/        # Command and message handlers
+├── keyboards/       # Interactive keyboards with buttons
+├── lexicon/         # Russian message and button texts
+├── logger/          # Logging settings and filters
+├── main.py          # Entry point, bot startup and configuration
+├── menu/            # Bot main menu commands
+├── requirements.txt # Project dependencies
+├── services/        # Game logic and helper functions
+├── .env.example     # Example environment variables file
+└── .gitignore       # Files and folders ignored by git
 ```
+
+## Game Rules
+
+The classic Rock-Paper-Scissors rules apply:
+- Rock 🗿 beats Scissors ✂️
+- Scissors ✂️ beats Paper 📜  
+- Paper 📜 beats Rock 🗿
+- Same choices result in a draw
+
+## Tech Stack
+
+- **Python 3.11+**
+- **aiogram 3.x** - Telegram Bot API framework
+- **environs** - Environment variable management
+- **Modular architecture** - Clean separation of concerns
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+This project is open source and available under the MIT License.
+
+## Note
+
+The bot interface is in Russian language, designed for Russian-speaking users. The game messages, buttons, and interactions are all in Russian with appropriate emojis and formatting.
